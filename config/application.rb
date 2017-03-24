@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module MyApp
   class Application < Rails::Application
-    
+
 
       # The compile method (default in tinymce-rails 4.5.2) doesn't work when also
       # using tinymce-rails-imageupload, so revert to the :copy method
@@ -18,6 +18,8 @@ module MyApp
       g.test_framework :rspec, :spec => true
     end
 
+    # Run jobs inline
+    config.active_job.queue_adapter = :inline
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
