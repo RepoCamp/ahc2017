@@ -63,4 +63,9 @@ gem 'devise-guests', '~> 0.5'
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
+  gem 'rspec-activemodel-mocks'
+  gem 'database_cleaner'
+  gem 'capybara', '~> 2.8'
+  gem 'rspec-its'
+  gem 'launchy'
 end
