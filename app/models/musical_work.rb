@@ -11,7 +11,15 @@ class MusicalWork < ActiveFedora::Base
 
   self.human_readable_type = 'Musical Work'
 
-  property :composer, predicate: ::RDF::Vocab::DC11.creator
-  property :genre, predicate: ::RDF::Vocab::DC11.subject
-  property :composition_date, predicate: ::RDF::Vocab::DC11.date
+  property :composer, predicate: ::RDF::Vocab::DC11.creator do |index|
+    index.as :stored_searchable
+  end
+
+  property :genre, predicate: ::RDF::Vocab::DC11.subject do |index|
+    index.as :stored_searchable
+  end
+
+  property :composition_date, predicate: ::RDF::Vocab::DC11.date do |index|
+    index.as :stored_searchable
+  end
 end
