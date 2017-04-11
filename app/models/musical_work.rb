@@ -10,4 +10,8 @@ class MusicalWork < ActiveFedora::Base
   validates :title, presence: { message: 'Your work must have a title.' }
 
   self.human_readable_type = 'Musical Work'
+
+  property :composer, predicate: ::RDF::Vocab::DC11.creator
+  property :genre, predicate: ::RDF::Vocab::DC11.subject
+  property :composition_date, predicate: ::RDF::Vocab::DC11.date
 end
