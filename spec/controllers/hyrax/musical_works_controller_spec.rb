@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Hyrax::MusicalWorksController do
-  it "has tests" do
-    skip "Add your tests here"
+  describe "::show_presenter" do
+    subject { described_class.show_presenter }
+    it { is_expected.to eq(MusicalWorkPresenter) }
   end
 end
