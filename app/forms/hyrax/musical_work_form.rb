@@ -3,6 +3,11 @@
 module Hyrax
   class MusicalWorkForm < Hyrax::Forms::WorkForm
     self.model_class = ::MusicalWork
-    self.terms += [:resource_type]
+    self.terms += [:title, :composer, :composition_date, :genre]
+    self.required_fields = [:title]
+
+    def primary_terms
+      [:title, :composer, :composition_date, :genre]
+    end
   end
 end
