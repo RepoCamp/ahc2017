@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      musical_work:     'fa fa-file-text-o'
+    select_type:
+      musical_work:
+        name:               "Musical Work"
+        description:        "Musical work works"
