@@ -330,6 +330,13 @@ GEM
       om (~> 3.1)
     i18n (0.8.1)
     ice_nine (0.11.2)
+    iiif-presentation (0.2.0)
+      activesupport (>= 3.2.18)
+      faraday (>= 0.9)
+      json
+    iiif_manifest (0.2.0)
+      activesupport (>= 4)
+      iiif-presentation (~> 0.2.0)
     inflecto (0.0.2)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -648,6 +655,7 @@ DEPENDENCIES
   devise-guests (~> 0.5)
   fcrepo_wrapper
   hyrax!
+  iiif_manifest
   jbuilder (~> 2.5)
   jquery-rails
   launchy
