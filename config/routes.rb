@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   mount Hyrax::Engine, at: '/'
   resources :welcome, only: 'index'
   root 'hyrax/homepage#index'
-  curation_concerns_basic_routes
+  curation_concerns_basic_routes do
+    member do
+      get :manifest
+    end
+  end
+
   curation_concerns_embargo_management
   concern :exportable, Blacklight::Routes::Exportable.new
 
