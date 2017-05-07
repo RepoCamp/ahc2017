@@ -37,4 +37,8 @@ class SolrDocument
   def composition_date
     fetch(Solrizer.solr_name('composition_date', :stored_searchable), [])
   end
+
+  def cover
+    fetch(Solrizer.solr_name('cover', :stored_searchable), [])
+  end
 end
