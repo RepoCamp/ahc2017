@@ -22,4 +22,8 @@ class MusicalWork < ActiveFedora::Base
   property :composition_date, predicate: ::RDF::Vocab::DC11.date do |index|
     index.as :stored_searchable
   end
+
+  property :cover, predicate: ::RDF::URI('http://opaquenamespace.org/ns/coverSubject') do |index|
+    index.as :stored_searchable, :facetable
+  end
 end
