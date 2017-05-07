@@ -27,14 +27,14 @@ class SolrDocument
   use_extension( Hydra::ContentNegotiation )
 
   def composer
-    fetch(Solrizer.solr_name('composer', :stored_searchable))
+    fetch(Solrizer.solr_name('composer', :stored_searchable), [])
   end
 
   def genre
-    fetch(Solrizer.solr_name('genre', :stored_searchable))
+    fetch(Solrizer.solr_name('genre', :stored_searchable), [])
   end
 
   def composition_date
-    fetch(Solrizer.solr_name('composition_date', :stored_searchable))
+    fetch(Solrizer.solr_name('composition_date', :stored_searchable), [])
   end
 end
