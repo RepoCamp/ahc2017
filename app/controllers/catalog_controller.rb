@@ -51,6 +51,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("based_near", :facetable), label: "Location", limit: 5
     config.add_facet_field solr_name("publisher", :facetable), label: "Publisher", limit: 5
     config.add_facet_field solr_name("file_format", :facetable), label: "File Format", limit: 5
+    config.add_facet_field solr_name("cover", :facetable), label: "Cover Subject", limit: 5
     config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
 
     # The generic_type isn't displayed on the facet list
@@ -68,6 +69,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("composer", :stored_searchable), label: "Composer", itemprop: 'creator'
     config.add_index_field solr_name("genre", :stored_searchable), label: "Genre", itemprop: 'genre'
     config.add_index_field solr_name("composition_date", :stored_searchable), label: "Compsition Date"
+    config.add_index_field solr_name("cover", :stored_searchable), label: "Cover Subject"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
