@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe SolrDocument do
+describe SolrDocument, type: :unit do
 
   subject { SolrDocument.new({}) }
 
@@ -8,6 +8,7 @@ describe SolrDocument do
   its(:composer)         { is_expected.to be_empty }
   its(:genre)            { is_expected.to be_empty }
   its(:composition_date) { is_expected.to be_empty }
+  its(:cover)            { is_expected.to be_empty }
 
   context "with complete metadata" do
     let(:work) do
@@ -16,6 +17,7 @@ describe SolrDocument do
         work.title = ["Song"]
         work.composition_date = ["today"]
         work.genre = ["pop"]
+        work.cover = ["horse"]
       end
     end
 
@@ -25,5 +27,6 @@ describe SolrDocument do
     its(:composer)         { is_expected.to contain_exactly("Joe Schmo") }
     its(:genre)            { is_expected.to contain_exactly("pop") }
     its(:composition_date) { is_expected.to contain_exactly("today") }
+    its(:cover)            { is_expected.to contain_exactly("horse") }
   end
 end
