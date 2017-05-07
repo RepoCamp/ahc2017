@@ -8,6 +8,7 @@ RSpec.feature 'Display a musical work' do
       work.title = ["Song"]
       work.genre =  ["Pop"]
       work.composition_date = ["today"]
+      work.cover = ["Magic Hat"]
       work.apply_depositor_metadata("user")
       work.visibility = "open"
       work.save
@@ -21,6 +22,7 @@ RSpec.feature 'Display a musical work' do
       expect(page).to have_content("Joe Schmo")
       expect(page).to have_content("Pop")
       expect(page).to have_content("today")
+      expect(page).to have_content("Magic Hat")
     end
   end
 end
